@@ -1,0 +1,43 @@
+#Cypress Architecture
+
+Selenium Architecture - Operated by running outside of the browser so forexample:
+ if you run a selenium tests, You need a driver or server like chrome driver. Script will talk
+ the browser by Json wire protocol - the driver is the middle layer between the browser
+ and the scripts. 
+
+ Cypress Architecture - Cypress directly talk the browser - the code execute in the same loops
+ as the application and behind cypress is a node server process.
+ Cypress and node will communicate and synchronize and perform tasks in behave each others
+ Cypress also operated in the Network Layer by reading and alterate network traffic.
+ This enabled cypress to not only modify everything coming at out of the browser but 
+ also changed code that made to automate the browser.
+
+ Why Cypress?
+
+ It is popular.
+ Most Job adverts will emntion cypress
+ Strong community huge weekly download on npm 
+ Rapid improvements -Cypress have a team behind them fully focused on 
+ making huge improvements
+
+
+ -Powerful tooling
+ -Really simple UI
+ -Debug from tools you already know
+ -Dashboard services for CI tests
+ -Cypress API makes everything easier
+
+
+ -Resilient and Reliable tests
+ -Automatic waiting
+ -Flake reisitant
+
+
+ DrawBacks:
+
+ .Cypress openly admit there are some trade offs due to its Architecture
+ .Limited to TypeScript and Javascript 
+    -- Permanent trade offs
+    -- Temporary trade offs
+
+

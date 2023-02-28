@@ -4,7 +4,9 @@
   "description": "Test framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open",
+    "test-custConfig": "cypress open --config-file ./custCypress.json",
+    "test-script-chrome": "cypress run --env"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,8 @@
   },
   "homepage": "https://gitlab.com/learning1068/cy-demo#readme",
   "dependencies": {
-    "cypress": "^12.6.0"
+    "cypress": "^12.6.0",
+    "fast-csv": "^4.3.6"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.3",
