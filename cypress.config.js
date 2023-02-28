@@ -6,6 +6,7 @@ const {writeToPath } = require('@fast-csv/format');
 
 
 module.exports = defineConfig({
+ // pageLoadTimeout: 10000,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
