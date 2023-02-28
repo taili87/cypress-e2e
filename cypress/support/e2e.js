@@ -25,3 +25,10 @@ require('cypress-xpath')
 
 // This is for the setup of mochawesome reports
 import 'cypress-mochawesome-reporter/register';
+
+require('@cypress/grep')();
+
+// To handle the uncaught exception 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+  })

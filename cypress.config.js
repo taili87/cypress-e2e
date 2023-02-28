@@ -4,6 +4,7 @@ const { defineConfig } = require('cypress');
 const csv = require('@fast-csv/parse');
 const {writeToPath } = require('@fast-csv/format');
 
+
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
@@ -16,6 +17,12 @@ module.exports = defineConfig({
   e2e: {
     
     setupNodeEvents(on, config) {
+      require('@cypress/grep/src/plugin')(config);
+      return config;
+  },
+    
+    setupNodeEvents(on, config) {
+   
       require('cypress-mochawesome-reporter/plugin')(on);
       on('task', {
         // read from csv file

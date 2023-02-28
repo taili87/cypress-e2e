@@ -4,13 +4,13 @@
     "expected": "Time at Work"
 },
 {
-    "username": "Admin1",
-    "password": "admin123",
+    "username": "Admin",
+    "password": "admin1234",
     "expected": "Invalid credentials"
 },
 {
-    "username": "Admin",
-    "password": "admin",
+    "username": "Admin1",
+    "password": "admin123",
     "expected": "Invalid credentials"
 }
 ]
