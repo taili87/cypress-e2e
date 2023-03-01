@@ -11,7 +11,9 @@
     "cypress:tags-folder": "cypress run --spec cypress/e2e/tags/*.js",
     "cypress:datadriven":"cypress run --spec cypress/e2e/tags/dataDriverTest.cy.js",
     "cypress:chrome":"cypress run --browser chrome --spec cypress/e2e/tags/dataDriverTest.cy.js",
-    "cypress:chromeHeadless":"cypress run --headless --browser chrome --spec cypress/e2e/tags/dataDriverTest.cy.js"
+    "cypress:chromeHeadless":"cypress run --headless --browser chrome --spec cypress/e2e/tags/dataDriverTest.cy.js",
+    "test:tag:sprintOrRegression":"cypress run --env grepTags=\"Sprint Regression \"",
+    "test:tag:sprintAndregression":"cypress run --env grepTags=\"Sprint+Regression \""
    
   },
   "repository": {
