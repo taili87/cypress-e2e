@@ -1,6 +1,6 @@
 ///<reference types="Cypress"/>
-describe('CSS LOCATOR',()=>{
-    it('css Locators', ()=>{
+describe('XPATH LOCATOR',()=>{
+    it('Test by using Xpath configuration', ()=>{
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         cy.xpath("//input[@placeholder='Username']").type('Admin');
         cy.xpath("//input[@placeholder='Password']").type('admin123');

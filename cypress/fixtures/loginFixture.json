@@ -1,0 +1,8 @@
+{
+    "username": "Admin",
+    "password": "admin123",
+    "expected": "Time at Work",
+    "Invalidusername": "Admin11",
+    "invalidpassword": "admin12323",
+    "invalidaexpected": "Invalid credentials"
+}

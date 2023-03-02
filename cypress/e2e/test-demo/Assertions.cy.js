@@ -47,11 +47,11 @@ describe('Assertions',()=>{
 
     it.skip('Explicit assertions', ()=>{
         
-       cy.get("input[placeholder='Username']").type('Admin');
-       cy.get("[input[placeholder='Password']").type('admin123');
-       cy.get("button[type='submit']").click();
+        cy.get("input[name='username']").type('Admin');
+        cy.get("input[name='password']").type('admin123');
+        cy.get("button[type='submit']").click();
 
-       let expected_name = "Mr.";
+       let expected_name = "Nagy KataKulkarni";
        cy.get(".oxd-userdropdown-name").then((loginUsername)=>{
         let actual_name = loginUsername.text();
         console.log("Actual name "+ actual_name);

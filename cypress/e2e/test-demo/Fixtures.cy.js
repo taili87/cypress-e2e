@@ -3,13 +3,13 @@
 describe("Launch Orange HRM and login ", () => {
     it('Login by using Fixture with Direct data', ()=>{
 
-        cy.fixture('orangehrmlogin').then((data) =>{
-            cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-            cy.xpath("//input[@placeholder='Username']").type(data.username);
-            cy.xpath("//input[@placeholder='Password']").type(data.password);
-            cy.xpath("//button[normalize-space()='Login']").click();
-            cy.get(':nth-child(1) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text')
-             .should('have.text', data.expected);
+        cy.fixture('loginFixture').then((usersData) =>{
+
+           
+                cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+                cy.get("input[name='username']").type(usersData.username);
+                cy.get("input[name='password']").type(usersData.password);
+                cy.get("button[type='submit']").click(); 
         })
      
   });
@@ -27,13 +27,13 @@ describe("Launch Orange HRM and login ", () => {
   it('Login by using Fixture with Access through the Hooks', ()=>{
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 
-    cy.fixture('orangehrmlogin').then((data)=>{
+    cy.fixture('loginFixture').then((data)=>{
 
-        cy.xpath("//input[@placeholder='Username']").type(userLoginData.username);
-        cy.xpath("//input[@placeholder='Password']").type(userLoginData.password);
-        cy.xpath("//button[normalize-space()='Login']").click();
-        cy.get(':nth-child(1) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text')
-         .should('have.text', userLoginData.expected);
+        cy.get("input[name='username']").type(data.Invalidusername);
+        cy.get("input[name='password']").type(data.invalidpassword);
+        cy.get("button[type='submit']").click();
+        cy.get('.oxd-alert-content > .oxd-text')
+         .should('have.text', data.invalidaexpected);
     })
 
 

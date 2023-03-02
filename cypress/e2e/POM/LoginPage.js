@@ -1,8 +1,8 @@
 //Page Object class 
 class Login {
 
-    userNameElement = "input[placeholder='Username']";
-    passwordElement = "input[placeholder='Password']";
+    userNameElement = "input[name='username']";
+    passwordElement = "input[name='password']";
     submitButtonElement = "button[type='submit']";
     textVerificationElement = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > p:nth-child(2)";
     
