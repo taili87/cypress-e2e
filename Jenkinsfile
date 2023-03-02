@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
 	agent any 
-	parameters{
+	parameters {
 		
 			string(name: 'SPEC', 
 			defaultValue: 'cypress/e2e/**/**', 
@@ -41,7 +41,7 @@ pipeline{
 					publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 				}
 			}
-		}
+		
 		}
 	}
 	
