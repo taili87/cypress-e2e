@@ -4,7 +4,7 @@
   "description": "Test framework",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open",
+    "test": "cypress run",
     "cypress:open":"cypress open",
     "cypress:run": "cypress run",
     "cypress:tags":"cypress run --spec cypress/e2e/tags/*.js --env grepTags='@sanityTgas'",
