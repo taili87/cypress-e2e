@@ -2,13 +2,8 @@ pipeline {
 	agent any 
 	parameters {
 		
-			string(name: 'SPEC', 
-			defaultValue: 'cypress/e2e/**/**', 
-			description:'Enter the scripts path that you want execute')
-
-			 choice(name:'BROWSER',
-			 choices: ['chrome', 'edge','firefox'],
-			 description: 'choise the browser where you want to tun test')
+			string(name: 'SPEC', defaultValue: 'cypress/e2e/**/**', description:'Enter the scripts path that you want execute')
+            choice(name:'BROWSER',choices: ['chrome', 'edge','firefox'], description: 'choise the browser where you want to tun test')
 	}
 
 		options{
@@ -42,6 +37,10 @@ pipeline {
 				}
 			}
 		
-		}
-	}
+		
+	    }
 	
+    }
+
+
+}
