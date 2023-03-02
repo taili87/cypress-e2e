@@ -16,8 +16,17 @@ pipeline{
 		}
 
 		stages{
-			stage('Deploying app'){
-				echo 'Building the Application'
+			stage('Building'){
+				steps{
+					echo 'Building the Application'
+				}
+			}
+
+		stages{
+			stage('Deploying'){
+				steps{
+					echo 'Deploying  the Application'
+				}
 			}
 			stage('Testing'){
 				steps{
@@ -29,7 +38,7 @@ pipeline{
 
 			post{
 				always {
-					publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+					publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 				}
 			}
 		}
