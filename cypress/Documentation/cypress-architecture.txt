@@ -131,6 +131,12 @@ Options:
 
 pipeline {
 	agent any
+
+   parameters {
+		
+			string(name: 'SPEC', defaultValue: 'cypress/e2e/**/**', description:'Enter the scripts path that you want execute')
+            choice(name:'BROWSER',choices: ['chrome', 'edge','firefox'], description: 'choise the browser where you want to tun test')
+	}
 	stages {
 		stage('Clone Git Repo'){
 				steps{
@@ -156,3 +162,21 @@ pipeline {
 }
 
 -------------------------------------------------------------------
+
+			post{
+				always {
+					publishHTML([allowMissing: false, 
+					alwaysLinkToLastBuild: false,
+					 keepAll: true, 
+					 reportDir: 'cypress/reports/', 
+					 reportFiles: 'index.html', 
+					 reportName: 'HTML Report', 
+					 reportTitles: ''])
+				}
+			}
+
+         stage('Publish HTML Report'){
+				steps{
+					publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+				}
+		}

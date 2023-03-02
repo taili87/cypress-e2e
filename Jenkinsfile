@@ -22,10 +22,18 @@ pipeline {
 					bat 'npm test'
 				}
 		}
-		stage('Publish HTML Report'){
-				steps{
-					publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+		
+
+		post{
+				always {
+					publishHTML([allowMissing: false, 
+					alwaysLinkToLastBuild: false,
+					 keepAll: true, 
+					 reportDir: 'cypress/reports/', 
+					 reportFiles: 'index.html', 
+					 reportName: 'HTML Report', 
+					 reportTitles: ''])
 				}
-		}
+			}
 	}
 }
