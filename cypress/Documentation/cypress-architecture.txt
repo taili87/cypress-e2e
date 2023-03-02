@@ -104,3 +104,26 @@ Options:
   -t, --tag <tag>                                             named tag(s) for recorded runs in Cypress Cloud
   --dev                                                       runs cypress in development and bypasses binary check      
   -h, --help                                                  display help for command
+
+
+  ***************JENKINS CONFIGURATION************************
+
+  1-Fetch cypress project from github, run and publish mochawesome html reports
+  a. Create a freestyle project
+  b. In General, select GitHub project: URL repo
+      - click advanced button, select "Use custom workspace" and mention the project directory, for example 
+         C:/Cypress-jenkins/GitHub
+  c. Go to source Code Management, select git 
+        set
+        Repositories ===> Repository URL: GitHub
+  d.Go to build, Click on add build step, select "Execution Window Batch" and add "npm install && npm test"
+  e. Go to Post-build Actions, Click on add post-build action, select "Publish HTML reports",
+
+     Install PUBLISH HTML REPORT plugin(https://plugins.jenkins.io/htmlpublisher/), if not already development
+
+     set
+        HTML directly to archieve: cypress/reports/mochareports
+        Index pages[s] = reports.html
+
+3. Run Cypress Tests presents locally and build project with parameters
+    

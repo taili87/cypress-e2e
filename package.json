@@ -13,7 +13,8 @@
     "cypress:chrome":"cypress run --browser chrome --spec cypress/e2e/tags/dataDriverTest.cy.js",
     "cypress:chromeHeadless":"cypress run --headless --browser chrome --spec cypress/e2e/tags/dataDriverTest.cy.js",
     "test:tag:sprintOrRegression":"cypress run --env grepTags=\"Sprint Regression \"",
-    "test:tag:sprintAndregression":"cypress run --env grepTags=\"Sprint+Regression \""
+    "test:tag:sprintAndregression":"cypress run --env grepTags=\"Sprint+Regression \"",
+    "cypress:run:jenkins": "cypress run --headless --browser chrome"
    
   },
   "repository": {
