@@ -16,8 +16,6 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
-
-   // baseUrl: 'http://localhost:1234',
     setupNodeEvents(on, config) {
       require('@cypress/grep/src/plugin')(config);
       return config;

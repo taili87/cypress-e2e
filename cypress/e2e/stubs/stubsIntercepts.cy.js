@@ -5,7 +5,7 @@
  //generate my own response by create stub
 
  describe('Stub Intercepts API',()=>{
-    it('test api with simple intercepts', ()=>{
+    it.only('test api with simple intercepts', ()=>{
         cy.visit('https://jsonplaceholder.typicode.com/')
 
         cy.intercept({ method:'GET',path: '/posts'}).as('posts');
@@ -20,7 +20,7 @@
 
 
     it('Mocking with intercepts test with static response', ()=>{
-        cy.visit('https://jsonplaceholder.typicode.com/');
+       // cy.visit('https://jsonplaceholder.typicode.com/');
         cy.intercept('GET', '/posts', {totalposts:5});//.as('posts');
         
         cy.get("table:nth-of-type(1) a[href='/posts']").click();
@@ -28,8 +28,8 @@
 
     })
 
-    it.only('Mocking with intercepts test with static response', ()=>{
-        cy.visit('https://jsonplaceholder.typicode.com/');
+    it('Mocking with intercepts test with static response', ()=>{
+       // cy.visit('https://jsonplaceholder.typicode.com/');
         cy.intercept('GET', '/posts', {fixture:'getuser.json'}).as('posts');
         cy.get("table:nth-of-type(1) a[href='/posts']").click();
         cy.wait('@posts');

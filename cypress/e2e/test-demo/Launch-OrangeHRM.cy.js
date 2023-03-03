@@ -3,8 +3,12 @@
 describe("Login Test ", () => {
   it('Login Test using cssSelectors Locators', ()=>{
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    cy.get("[name='username']").type('Admin');
-    cy.get("[name='password']").type('admin123');
+    cy.get("[name='username']").type('Admin').then(()=>{
+      cy.log('Username is enter');
+    });
+    cy.get("[name='password']").type('admin123').then(()=>{
+      cy.log('Password enterred');
+    });
     cy.get("button[type='submit']").click();
 })
 
