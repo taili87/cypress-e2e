@@ -13,7 +13,6 @@
         cy.wait('@posts').then(res=>{
             cy.log(JSON.stringify(res));
             console.log(JSON.stringify(res));
-
             expect(res.response.body).to.have.length(100);
         })
     })
